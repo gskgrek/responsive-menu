@@ -5,7 +5,6 @@ App.prototype = function(){
     let init = () => {
 
         prepareNav();
-        prepareScroll();
 
     };
 
@@ -30,22 +29,6 @@ App.prototype = function(){
             });
         });
 
-    };
-
-    let scrollHandler = () => {
-        let documentElement = document.documentElement;
-        let body = document.body;
-        let scrollTop = (window.pageYOffset || documentElement.scrollTop)  - (documentElement.clientTop || 0);
-        if( scrollTop > 0 ){
-            body.classList.add('scrolled');
-        }else{
-            body.classList.remove('scrolled');
-        }
-    };
-
-    let prepareScroll = () => {
-        window.addEventListener('scroll', scrollHandler);
-        scrollHandler();
     };
 
     return {
